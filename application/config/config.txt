@@ -532,19 +532,20 @@ $config['rewrite_short_tags'] = FALSE;
 | Array:		array('10.0.1.200', '192.168.5.0/24')
 */
 
+
 //============================= Vclaim BPJS Tester============================//
 // $config['vclaim_url'] 		= 'https://apijkn-dev.bpjs-kesehatan.go.id';
 // $config['vclaim_servisce'] 	= 'vclaim-rest-dev';
-// $config['vclaim_cons_id'] 	= '17818';
-// $config['vclaim_secretKey'] = '6tFE86B4C4';
-// $config['vclaim_user_key']  = 'e199c4e63fd7c12716359d4c5f03fc4f';
+// $config['vclaim_cons_id'] 	= '';
+// $config['vclaim_secretKey'] = '';
+// $config['vclaim_user_key']  = '';
 
 //============================= Vclaim BPJS ============================//
 $config['vclaim_url'] 		= 'https://apijkn.bpjs-kesehatan.go.id';
 $config['vclaim_servisce'] 	= 'vclaim-rest';
-$config['vclaim_cons_id'] 	= '8339';
-$config['vclaim_secretKey'] = '3bVC2001FD';
-$config['vclaim_user_key']  = '266971380cb446568c4a961d4d126779';
+$config['vclaim_cons_id'] 	= '';
+$config['vclaim_secretKey'] = '';
+$config['vclaim_user_key']  = '';
 
 date_default_timezone_set('UTC');
 $config['vclaim_tStamp']    = strval(time()-strtotime('1970-01-01 00:00:00'));
@@ -556,16 +557,16 @@ $config['vclaim_key'] = $config['vclaim_cons_id'].$config['vclaim_secretKey'].$c
 //============================= Antrol BPJS Tester ===========================//
 // $config['antrol_url']		= 'https://apijkn-dev.bpjs-kesehatan.go.id';
 // $config['antrol_servisce']  = 'antreanrs_dev';
-// $config['antrol_cons_id']   = '17818';
-// $config['antrol_secretKey'] = '6tFE86B4C4';
-// $config['antrol_user_key']  = '78871564032405550d7cd60c96053399';
+// $config['antrol_cons_id']   = '';
+// $config['antrol_secretKey'] = '';
+// $config['antrol_user_key']  = '';
 
 //============================= Antrol BPJS ===========================//
 $config['antrol_url']		= 'https://apijkn.bpjs-kesehatan.go.id';
 $config['antrol_servisce']  = 'antreanrs';
-$config['antrol_cons_id']   = '8339';
-$config['antrol_secretKey'] = '3bVC2001FD';
-$config['antrol_user_key']  = '33ffeb2cc73cfa4ba8de6962d106ea57';
+$config['antrol_cons_id']   = '';
+$config['antrol_secretKey'] = '';
+$config['antrol_user_key']  = '';
 
 date_default_timezone_set('UTC');
 $config['antrol_tStamp']    = strval(time()-strtotime('1970-01-01 00:00:00'));
@@ -575,9 +576,9 @@ $config['antrol_encodedSignature'] = base64_encode($antrol_signature);
 $config['antrol_key'] = $config['antrol_cons_id'].$config['antrol_secretKey'].$config['antrol_tStamp'];
 
 //======================================= Nama aplikasi ===================//
-$config['namaapp']    = 'RSUD Kabupaten Gayo Lues';
-$config['namars']     = 'RSUD Kabupaten Gayo Lues';
-$config['heder']      = 'RSUD Kabupaten Gayo Lues';
+$config['namaapp']    = 'RSUD Muslimlife';
+$config['namars']     = 'RSUD Muslimlife';
+$config['heder']      = 'RSUD Muslimlife';
 $config['copyright']  = '<strong>Copyright © '.date('Y').' </strong> All rights reserved.';
 //=========================================================================//
 $config['proxy_ips'] = '';

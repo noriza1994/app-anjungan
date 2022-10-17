@@ -1,22 +1,25 @@
-# app anjungan
+# app Anjungan
 
 
 ## Getting started
+```
+composer require nullpunkt/lz-string-php
+copy file database.txt => config/database.php
+copy file config.txt   => config/config.php
+copy file htaccess.txt => => .htaccess
+copy file application/htaccess.txt => => application/.htaccess
+copy file system/htaccess.txt => => system/.htaccess
+```
 
 ## settingan database
 ```
-application > config > database.php 
-isi data $db['dbrs'];
+config/database.php
+jalankan migrations dan dbseed pada app laravel untuk uxui_pasien_baru_onsite
 ```
 
-## settingan system php dan mysql
+## settingan APP
 ```
-pada php.ini 
-aktfikan sqlite3
+setting name app dan vclaim dan antrol
+config/config.php
 ```
 
-## settingan consid brigging bpjs
-```
-application > config > config.php
-cari data vclaim
-```
