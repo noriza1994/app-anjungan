@@ -4,8 +4,8 @@
 ## Getting started
 ```
 composer require nullpunkt/lz-string-php
-copy file database.txt => config/database.php
-copy file config.txt   => config/config.php
+copy file database.txt => application/config/database.php
+copy file config.txt   => application/config/config.php
 copy file htaccess.txt => => .htaccess
 copy file application/htaccess.txt => => application/.htaccess
 copy file system/htaccess.txt => => system/.htaccess
