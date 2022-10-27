@@ -6,14 +6,19 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-	$path=dirname(dirname(dirname(__DIR__)));
-    $path_autoload=$path. '/vendor/autoload.php';
-    if(!file_exists($path_autoload)){
-        echo 'Tidak ada file vendor/autoload.php';
-        die;
-    }
-    require_once realpath($path_autoload);
-    $dotenv = Dotenv\Dotenv::createImmutable($path);
+	$path=dirname(dirname(__DIR__));
+	$path_env=dirname(dirname(dirname(__DIR__)));
+	$path_autoload=$path. '/vendor/autoload.php';
+	if(!file_exists($path_autoload)){
+		echo 'Tidak ada file vendor/autoload.php';
+		die;
+	}
+	if(!file_exists($path_env)){
+		echo 'Tidak ada file .env pada laravel';
+		die;
+	}
+	require_once realpath($path_autoload);
+	$dotenv = Dotenv\Dotenv::createImmutable($path_env);
     try{
         $dotenv->load();
     } catch (\Throwable $e) {

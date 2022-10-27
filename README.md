@@ -4,6 +4,8 @@
 ## Getting started
 ```
 composer require nullpunkt/lz-string-php
+composer require vlucas/phpdotenv
+
 copy file database.txt => application/config/database.php
 jika app terpisah
 copy file config.txt   => application/config/config.php
