@@ -1,35 +1,4 @@
 <?php
-
-// ini_set('display_errors', '1');
-// ini_set('display_startup_errors', '1');
-// error_reporting(E_ALL);
-
-$path=dirname(dirname(dirname(__DIR__)));
-$path_autoload=$path. '/vendor/autoload.php';
-if(!file_exists($path_autoload)){
-    echo 'Tidak ada file vendor/autoload.php';
-    die;
-}
-require_once realpath($path_autoload);
-$dotenv = Dotenv\Dotenv::createImmutable($path);
-try{
-    $dotenv->load();
-} catch (\Throwable $e) {
-    echo 'Tidak ada file .env';
-    die;
-}
-
-$status_akses=0;
-if(!empty($_ENV['MODUL_ANJUNGAN'])){
-    if($_ENV['MODUL_ANJUNGAN']=='true'){
-        $status_akses=1;
-    }
-}
-
-if(empty($status_akses)){
-    echo 'tidak dapat di akses';die;
-}
-
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 /*
@@ -55,14 +24,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 
-$ces_tunner='http';
-if(!empty($_ENV['HTTPS'])){
-    if($_ENV['HTTPS']=='true'){
-        $ces_tunner='https';
-    }
+if (isset($_SERVER['HTTPS']) &&
+    ($_SERVER['HTTPS'] == 'on' || $_SERVER['HTTPS'] == 1) ||
+    isset($_SERVER['HTTP_X_FORWARDED_PROTO']) &&
+    $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https') {
+  $protocol = 'https://';
+}
+else {
+  $protocol = 'http://';
 }
 
-$root = $ces_tunner."//".$_SERVER['HTTP_HOST'];
+$root = $protocol.$_SERVER['HTTP_HOST'];
 $root .= str_replace(basename($_SERVER['SCRIPT_NAME']),"",$_SERVER['SCRIPT_NAME']);
 $config['base_url'] = "$root";
 
@@ -570,6 +542,37 @@ $config['rewrite_short_tags'] = FALSE;
 | Comma-separated:	'10.0.1.200,192.168.5.0/24'
 | Array:		array('10.0.1.200', '192.168.5.0/24')
 */
+
+
+// ini_set('display_errors', '1');
+// ini_set('display_startup_errors', '1');
+// error_reporting(E_ALL);
+
+$path=dirname(dirname(dirname(__DIR__)));
+$path_autoload=$path. '/vendor/autoload.php';
+if(!file_exists($path_autoload)){
+    echo 'Tidak ada file vendor/autoload.php';
+    die;
+}
+require_once realpath($path_autoload);
+$dotenv = Dotenv\Dotenv::createImmutable($path);
+try{
+    $dotenv->load();
+} catch (\Throwable $e) {
+    echo 'Tidak ada file .env';
+    die;
+}
+
+$status_akses=0;
+if(!empty($_ENV['MODUL_ANJUNGAN'])){
+    if($_ENV['MODUL_ANJUNGAN']=='true'){
+        $status_akses=1;
+    }
+}
+
+if(empty($status_akses)){
+    echo 'tidak dapat di akses';die;
+}
     
 //============================= Vclaim BPJS ============================//
 $config['vclaim_url'] 		= $_ENV['VCLAIM_URL'];
