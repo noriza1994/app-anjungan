@@ -27,7 +27,7 @@
                                           c.no_ktp,
                                           c.no_tlp 
                                   from reg_periksa a 
-                                  join tbl_pasien_baru_onsite b on a.no_rkm_medis=b.no_rkm_medis 
+                                  join uxui_pasien_baru_onsite b on a.no_rkm_medis=b.no_rkm_medis 
                                   join pasien c on b.no_rkm_medis=c.no_rkm_medis 
                                   where b.posisi = 'Belum' and b.tanggal = '$tanggal'")->result_array();
 
@@ -108,7 +108,7 @@
           $this->dbrs->set('posisi', 'Sudah');
           $this->dbrs->where('no_rkm_medis', $data['no_rkm_medis']);
           $this->dbrs->where('no_boking', $data['no_boking']);
-          $this->dbrs->update('tbl_pasien_baru_onsite');
+          $this->dbrs->update('uxui_pasien_baru_onsite');
       }
 
       $this->dbrs->insert_batch('referensi_mobilejkn_bpjs', $onsite_jkn);

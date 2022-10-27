@@ -1211,7 +1211,7 @@ class Jkn_online extends CI_Controller {
                 $this->dbrs->set('tanggal', $tanggal);
                 $this->dbrs->set('no_referensi', $this->input->post('no_referensi'));
                 $this->dbrs->set('jns_kunjungan', $this->input->post('jns_kunjungan'));
-                $this->dbrs->insert('tbl_pasien_baru_onsite');
+                $this->dbrs->insert('uxui_pasien_baru_onsite');
 
                 $jam      = $date->format('H:i:s');
                 $waktu    = strtotime(''.date('Y-m-d').' '.$jam.'') * 1000 + 7;
