@@ -146,18 +146,18 @@
                       <tr>
                         <td><?php echo $data->kodepoli; ?> - <?php echo $data->namapoli; ?></td>
                         <td class="text-center"><?php echo $data->jumlah_antrean; ?></td>
-                        <td class="text-center"><?php echo $data->waktu_task1; ?></td>
-                        <td class="text-center"><?php echo $data->avg_waktu_task1; ?></td>
-                        <td class="text-center"><?php echo $data->waktu_task2; ?></td>
-                        <td class="text-center"><?php echo $data->avg_waktu_task2; ?></td>
-                        <td class="text-center"><?php echo $data->waktu_task3; ?></td>
-                        <td class="text-center"><?php echo $data->avg_waktu_task3; ?></td>
-                        <td class="text-center"><?php echo $data->waktu_task4; ?></td>
-                        <td class="text-center"><?php echo $data->avg_waktu_task4; ?></td>
-                        <td class="text-center"><?php echo $data->waktu_task5; ?></td>
-                        <td class="text-center"><?php echo $data->avg_waktu_task5; ?></td>
-                        <td class="text-center"><?php echo $data->waktu_task6; ?></td>
-                        <td class="text-center"><?php echo $data->avg_waktu_task6; ?></td>
+                        <td class="text-center"><?php echo gmdate("H:i:s", $data->waktu_task1); ?></td>
+                        <td class="text-center"><?php echo gmdate("H:i:s", $data->avg_waktu_task1); ?></td>
+                        <td class="text-center"><?php echo gmdate("H:i:s", $data->waktu_task2); ?></td>
+                        <td class="text-center"><?php echo gmdate("H:i:s", $data->avg_waktu_task2); ?></td>
+                        <td class="text-center"><?php echo gmdate("H:i:s", $data->waktu_task3); ?></td>
+                        <td class="text-center"><?php echo gmdate("H:i:s", $data->avg_waktu_task3); ?></td>
+                        <td class="text-center"><?php echo gmdate("H:i:s", $data->waktu_task4); ?></td>
+                        <td class="text-center"><?php echo gmdate("H:i:s", $data->avg_waktu_task4); ?></td>
+                        <td class="text-center"><?php echo gmdate("H:i:s", $data->waktu_task5); ?></td>
+                        <td class="text-center"><?php echo gmdate("H:i:s", $data->avg_waktu_task5); ?></td>
+                        <td class="text-center"><?php echo gmdate("H:i:s", $data->waktu_task6); ?></td>
+                        <td class="text-center"><?php echo gmdate("H:i:s", $data->avg_waktu_task6); ?></td>
                         <td><?php echo date("Y-m-d H:i:s", $data->insertdate / 1000 + 7); ?></td>
                         <td><?php echo $data->tanggal; ?></td>
                       </tr>
@@ -165,7 +165,19 @@
                     </tbody>
                   </table>
               </div>
-
+              <div class="col-lg-12">
+                <p><b>Catatan:</b></p>
+                <p>
+                  a)  Waktu Task 1 = Waktu tunggu admisi dalam detik <br>
+                  b)  Waktu Task 2 = Waktu layan admisi dalam detik <br>
+                  c)  Waktu Task 3 =  Waktu tunggu poli dalam detik <br>
+                  d)  Waktu Task 4 = Waktu layan poli dalam detik <br>
+                  e)  Waktu Task 5 = Waktu tunggu farmasi dalam detik <br>
+                  f)  Waktu Task 6 = Waktu layan farmasi dalam detik <br>
+                  g)  Insertdate = Waktu pengambilan data, timestamp dalam milisecond <br>
+                  h)  Waktu server adalah data waktu (task 1-6) yang dicatat oleh server BPJS Kesehatan setelah RS mengimkan data, sedangkan waktu rs adalah data waktu (task 1-6) yang dikirimkan oleh RS 
+                </p>
+              </div>
               <div class="card-footer bg-info color-palette">
 
               </div>
