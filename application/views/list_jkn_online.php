@@ -101,6 +101,7 @@
                 <table class="table table-hover text-nowrap">
                     <thead>
                       <tr>
+                        <th class="text-center">No</th>
                         <th class="text-center">Kode Booking</th>
                         <th class="text-center">Nama Pasien</th>
                         <th class="text-center">Poliklinik</th>
@@ -109,12 +110,13 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <?php foreach ($jkn as $data) { ?>                   
+                      <?php $no=1; foreach ($jkn as $data) { ?>                   
                       <tr>
+                        <td class="text-center"><?php echo $no; ?></td>
                         <td class="text-center"><?php echo $data['nobooking'] ?></td>
-                        <td class="text-center"><?php echo $data['nm_pasien'] ?></td>
-                        <td class="text-center"><?php echo $data['nm_poli_bpjs'] ?></td>
-                        <td class="text-center"><?php echo $data['jeniskunjungan'] ?></td>
+                        <td class="text-left"><?php echo $data['nm_pasien'] ?></td>
+                        <td class="text-left"><?php echo $data['nm_poli_bpjs'] ?></td>
+                        <td class="text-left"><?php echo $data['jeniskunjungan'] ?></td>
                         <td class="text-center">
                           <div class="btn-group">
                       <button class="btn btn-inverse dropdown-toggle" href="#" data-toggle="dropdown">
@@ -149,7 +151,7 @@
                     </div>
                         </td>
                       </tr>
-                    <?php } ?>
+                    <?php $no++; } ?>
                     </tbody>
                   </table>
               </div>
@@ -167,7 +169,7 @@
       <!-- /.content-wrapper -->
 
       <!-- Main Footer -->
-      <footer class="main-footer">
+      <footer class="main-footer" style="background-color: #007bff;">
         <!-- To the right -->
         <div class="float-right d-none d-sm-inline">
           <?php echo $this->config->item('namars'); ?>
