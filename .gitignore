@@ -35,5 +35,4 @@ user_guide_src/cilexer/pycilexer.egg-info/*
 /vendor
 application/config/database.php
 application/config/config.php
-.htaccess
 application/database/antri.db3
