@@ -1,298 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title><?php echo $this->config->item('namaapp'); ?></title>
 
-    <!-- Google Font: Source Sans Pro -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/plugins/fontawesome-free/css/all.min.css">
-    <!-- Theme style -->
-    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/dist/css/adminlte.min.css">
-  </head>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title><?php echo $this->config->item('namaapp'); ?></title>
 
-  <body class="hold-transition sidebar-collapse layout-top-nav">
-    <div class="wrapper">
+	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/dist/css/app.css">
+	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/package/swiper/swiper-bundle.min.css" />
+</head>
+<style>
+	body {
+		background: url('assets/dist/img/bgpage.png') no-repeat center center fixed;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		background-size: cover;
+		-o-background-size: cover;
+	}
 
-      <!-- Navbar -->
-      <nav class="main-header navbar navbar-expand-md navbar-light navbar-primary">
-        <div class="container">
-          <a href="<?php echo base_url(); ?>assets/index3.html" class="navbar-brand">
-            <img src="<?php echo base_url(); ?>assets/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-            <span class="brand-text font-weight-light"><?php echo $this->config->item('namaapp'); ?></span>
-          </a>
+</style>
 
-          <!-- Right navbar links -->
-          <ul class="order-1 order-md-3 navbar-nav navbar-no-expand ml-auto">
-            <h4><?php echo $this->config->item('namars'); ?></h4>
-          </ul>
-        </div>
-      </nav>
-      <!-- /.navbar -->
+<body class="container mx-auto h-screen">
+	<div class="flex flex-col gap-5 justify-center h-full items-center">
+		<div class="w-full bg-white rounded-3xl flex px-20 py-5">
+			<div class="flex flex-col w-1/6 h-auto">
+				<img src="<?php echo base_url(); ?>assets/dist/img/logo.png" class="w-40" alt="">
+			</div>
+			<div class="flex w-5/6 flex-col text-center items-center justify-center gap-3">
+				<div class="font-bold text-4xl">ANJUNGAN CETAK SURAT ELIGIBILITAS PESERTA (SEP) BPJS</div>
+				<div class="h-2 w-full rounded-3xl bg-gray-800"></div>
+				<div class="font-bold text-4xl">RUMAH SAKIT UMUM DR.FAUZIAH</div>
+			</div>
+		</div>
 
-      <!-- Main Sidebar Container -->
-      <aside class="main-sidebar sidebar-dark-primary elevation-4">
-        <!-- Brand Logo -->
-        <a href="<?php echo base_url(); ?>assets/index3.html" class="brand-link">
-          <img src="<?php echo base_url(); ?>assets/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-          <span class="brand-text font-weight-light">AdminLTE 3</span>
-        </a>
-      </aside>
+		<div class="flex flex-row gap-10 w-full mt-10">
+			<div class="w-3/5 bg-white rounded-3xl flex overflow-hidden">
+				<div class="swiper mySwiper">
+					<div class="swiper-wrapper h-96">
+						<div class="swiper-slide ">
+							<img class="object-cover w-full h-full" src="<?php echo base_url(); ?>assets/dist/img/slide1.jpg"
+								alt="image" />
+						</div>
+						<div class="swiper-slide">
+							<img class="object-cover w-full h-full" src="<?php echo base_url(); ?>assets/dist/img/slide1.jpg"
+								alt="image" />
+						</div>
+						<div class="swiper-slide">
+							<img class="object-cover w-full h-full" src="<?php echo base_url(); ?>assets/dist/img/slide1.jpg"
+								alt="image" />
+						</div>
+					</div>
+					<div class="swiper-button-next"></div>
+					<div class="swiper-button-prev"></div>
+				</div>
+			</div>
 
-      <!-- Content Wrapper. Contains page content -->
-      <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
-        <div class="content-header">
-          <div class="container">
-            <div class="row mb-2">
-              <div class="col-sm-6">
-                <h1 class="m-0"> <?php echo $this->config->item('heder'); ?></h1>
-              </div><!-- /.col -->
-              <div class="col-sm-6">
-                <ol class="breadcrumb float-sm-right">
-                  <button class="btn btn-warning lg">Kembali</button>
-                </ol>
-              </div><!-- /.col -->
-            </div><!-- /.row -->
-          </div><!-- /.container-fluid -->
-        </div>
-        <!-- /.content-header -->
+			<div class="flex flex-col w-2/5  py-5 gap-10 justify-center items-center">
+				<a href="<?php echo site_url('jkn_online/antrian'); ?>" class="w-full ">
+					<div class="flex justify-center flex-col gap-4 items-center font-bold text-4xl  bg-[#D7FFA4] hover:bg-[#B0FF4D] border-8 border-gray-700 rounded-3xl text-center" style="padding-top: 50px; padding-bottom: 50px;">
+            <div>DAFTAR</div>  
+            <div>MANDIRI</div>
+          </div>
+				</a>
+				<a href="<?php echo site_url('jkn_online/antrian'); ?>" class="w-full">
+          <div class="flex justify-center flex-col gap-4 items-center font-bold text-4xl  bg-[#88F8F6] hover:bg-[#26f3ef] border-8 border-gray-700 rounded-3xl text-center" style="padding-top: 50px; padding-bottom: 50px;">
+            <div>KONFIRMASI</div>  
+            <div>KEHADIRAN (CHECK-IN)</div>
+          </div>
+				</a>
+			</div>
+		</div>
+		<div class="text-white">
+			<?php echo $this->config->item('copyright'); ?>
+		</div>
+	</div>
+	<!-- Swiper JS -->
+	<script src="<?php echo base_url(); ?>assets/package/swiper/swiper-bundle.min.js"></script>
+	<script>
+		var swiper = new Swiper('.mySwiper', {
+			navigation: {
+				nextEl: '.swiper-button-next',
+				prevEl: '.swiper-button-prev',
+			},
+		});
 
-        <!-- Main content -->
-        <div class="content">
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-6">
-                <a id="post1" href="javascript:void(0)">
-                  <div class="card card-primary card-outline">
-                    <div class="card-body bg-orange color-palette">
-                      <p class="card-text">
-                        <h1 class="text-center"><b>PASIEN LAMA</b></h1>
-                      </p>
-                    </div>
-                  </div>
-                </a>
+	</script>
+</body>
 
-                <a id="post2" href="javascript:void(0)">
-                  <div class="card card-primary card-outline">
-                    <div class="card-body bg-orange color-palette">
-                      <p class="card-text">
-                        <h1 class="text-center"><b>PASIEN BARU</b></h1>
-                      </p>
-                    </div>
-                  </div><!-- /.card -->
-                </a>
-
-                <a id="post3" href="javascript:void(0)">
-                  <div class="card card-primary card-outline">
-                    <div class="card-body bg-orange color-palette">
-                      <p class="card-text">
-                        <h1 class="text-center"><b>RAWAT INAP</b></h1>
-                      </p>
-
-                    </div>
-                  </div>
-                </a>
-
-              </div>
-              <!-- /.col-md-6 -->
-              <div class="col-lg-6">
-
-                <a id="post4" href="javascript:void(0)">
-                  <div class="card card-primary card-outline">
-                    <div class="card-body bg-orange color-palette">
-                      <p class="card-text">
-                        <h1 class="text-center"><b>PRIORITAS</b></h1>
-                      </p>
-
-                    </div>
-                  </div><!-- /.card -->
-                </a>
-
-                <a id="post5" href="javascript:void(0)">
-                  <div class="card card-primary card-outline">
-                    <div class="card-body bg-orange color-palette">
-                      <p class="card-text">
-                        <h1 class="text-center"><b>UMUM</b></h1>
-                      </p>
-                      
-                    </div>
-                  </div><!-- /.card -->
-                </a>
-
-                <a id="post6" href="javascript:void(0)">
-                  <div class="card card-primary card-outline">
-                    <div class="card-body bg-orange color-palette">
-                      <p class="card-text">
-                        <h1 class="text-center"><b>APOTEK</b></h1>
-                      </p>
-                      
-                    </div>
-                  </div><!-- /.card -->
-                </a>
-
-              </div>
-              <!-- /.col-md-6 -->
-            </div>
-            <!-- /.row -->
-
-            <div class="row">
-              <div class="col-lg-12">
-                <a href="<?php echo site_url('jkn_online/antrian'); ?>">
-                  <div class="card card-success card-outline">
-                    <div class="card-body bg-primary color-palette">
-                      <p class="card-text">
-                        <h1 class="text-center"><b>JKN ONLINE</b></h1>
-                      </p>
-                    </div>
-                  </div><!-- /.card -->
-                </a>
-              </div>  
-            </div>
-
-          </div><!-- /.container-fluid -->
-        </div>
-        <!-- /.content -->
-      </div>
-      <!-- /.content-wrapper -->
-
-      <!-- Main Footer -->
-      <footer class="main-footer">
-        <!-- To the right -->
-        <div class="float-right d-none d-sm-inline">
-          <?php echo $this->config->item('namars'); ?>
-        </div>
-        <!-- Default to the left -->
-        <?php echo $this->config->item('copyright'); ?>
-      </footer>
-    </div>
-    <!-- ./wrapper -->
-
-    <!-- REQUIRED SCRIPTS -->
-    <script type="text/javascript">
-      $(document).ready(function() {
-        // proses post1 data
-        $('#post1').on('click', function() {
-          var post    = 'POST0';
-          var source  = 'TICKET#0';
-          $.ajax({
-            type: 'POST', // mengirim data dengan method POST
-            url: '<?php echo site_url('beranda/add_antrian'); ?>', // url file proses insert data
-            data : {post:post, source:source},
-            success: function(result) {       // ketika proses insert data selesai
-              window.open('<?php echo site_url('beranda/ctk_antrian/POST0'); ?>','popUpWindow','height=500,width=400,left=100,top=100,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no, status=yes');
-
-            },
-          });
-        });
-      });
-    </script>
-
-    <script type="text/javascript">
-      $(document).ready(function() {
-        // proses post1 data
-        $('#post2').on('click', function() {
-          var post    = 'POST1';
-          var source  = 'TICKET#1';
-          $.ajax({
-            type: 'POST', // mengirim data dengan method POST
-            url: '<?php echo site_url('beranda/add_antrian'); ?>', // url file proses insert data
-            data : {post:post, source:source},
-            success: function(result) {       // ketika proses insert data selesai
-              window.open('<?php echo site_url('beranda/ctk_antrian/POST1'); ?>','popUpWindow','height=500,width=400,left=100,top=100,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no, status=yes');
-
-            },
-          });
-        });
-      });
-    </script>
-
-    <script type="text/javascript">
-      $(document).ready(function() {
-        // proses post1 data
-        $('#post3').on('click', function() {
-          var post    = 'POST2';
-          var source  = 'TICKET#2';
-          $.ajax({
-            type: 'POST', // mengirim data dengan method POST
-            url: '<?php echo site_url('beranda/add_antrian'); ?>', // url file proses insert data
-            data : {post:post, source:source},
-            success: function(result) {       // ketika proses insert data selesai
-              window.open('<?php echo site_url('beranda/ctk_antrian/POST2'); ?>','popUpWindow','height=500,width=400,left=100,top=100,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no, status=yes');
-
-            },
-          });
-        });
-      });
-    </script>
-
-
-    <script type="text/javascript">
-      $(document).ready(function() {
-        // proses post1 data
-        $('#post4').on('click', function() {
-          var post    = 'POST3';
-          var source  = 'TICKET#3';
-          $.ajax({
-            type: 'POST', // mengirim data dengan method POST
-            url: '<?php echo site_url('beranda/add_antrian'); ?>', // url file proses insert data
-            data : {post:post, source:source},
-            success: function(result) {       // ketika proses insert data selesai
-              window.open('<?php echo site_url('beranda/ctk_antrian/POST3'); ?>','popUpWindow','height=500,width=400,left=100,top=100,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no, status=yes');
-
-            },
-          });
-        });
-      });
-    </script>
-
-
-    <script type="text/javascript">
-      $(document).ready(function() {
-        // proses post1 data
-        $('#post5').on('click', function() {
-          var post    = 'POST6';
-          var source  = 'TICKET#6';
-          $.ajax({
-            type: 'POST', // mengirim data dengan method POST
-            url: '<?php echo site_url('beranda/add_antrian'); ?>', // url file proses insert data
-            data : {post:post, source:source},
-            success: function(result) {       // ketika proses insert data selesai
-              window.open('<?php echo site_url('beranda/ctk_antrian/POST6'); ?>','popUpWindow','height=500,width=400,left=100,top=100,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no, status=yes');
-
-            },
-          });
-        });
-      });
-    </script>
-
-    <script type="text/javascript">
-      $(document).ready(function() {
-        // proses post1 data
-        $('#post6').on('click', function() {
-          var post    = 'POST7';
-          var source  = 'TICKET#7';
-          $.ajax({
-            type: 'POST', // mengirim data dengan method POST
-            url: '<?php echo site_url('beranda/add_antrian'); ?>', // url file proses insert data
-            data : {post:post, source:source},
-            success: function(result) {       // ketika proses insert data selesai
-              window.open('<?php echo site_url('beranda/ctk_antrian/POST7'); ?>','popUpWindow','height=500,width=400,left=100,top=100,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no, status=yes');
-
-            },
-          });
-        });
-      });
-    </script>
-
-    <!-- jQuery -->
-    <script src="<?php echo base_url(); ?>assets/plugins/jquery/jquery.min.js"></script>
-    <!-- Bootstrap 4 -->
-    <script src="<?php echo base_url(); ?>assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <!-- AdminLTE App -->
-    <script src="<?php echo base_url(); ?>assets/dist/js/adminlte.min.js"></script>
-  </body>
 </html>
